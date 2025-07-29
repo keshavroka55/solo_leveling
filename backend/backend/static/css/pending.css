@@ -1,0 +1,62 @@
+body {
+    background: linear-gradient(135deg, #4b0082, #8a2be2);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.pending-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    border: 2px solid #ff4500;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+}
+
+.pending-container h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff4500;
+}
+
+.pending-container p {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.flame-icon {
+    font-size: 40px;
+    color: #ff4500;
+    animation: flicker 1s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.pending-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('{% static "images/character-bg.png" %}') no-repeat center;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+    border-radius: 15px;
+}

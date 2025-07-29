@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow or Loose!</title>
+</head>
+<body>
+    {% block nav %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+        <nav class="nav-bar">
+        <div class="logo">Solo Leveling</div>
+        <ul class="nav-links">
+            <li><a href="{% url 'task_create' %}">Create Task</a></li>
+            <li><a href="{% url 'task_list' %}">Task List</a></li>
+            <li><a href="{% url 'daily-summary' %}">Progress</a></li>
+            <li><a href="{% url 'progress-graph' %}">Progress Graph</a></li>
+            <li><a href="{% url 'submit-progress' %}">Submit progress view</a></li>
+            <li><a href="{% url 'keshav' %}">Status</a></li>    
+        </ul>   
+        <a href="{% url 'profile' %}" class="login-btn">Profile</a>
+        <a href="{% url 'login' %}" class="login-btn">Login</a>
+        </nav>
+    {% endblock %}
+    {% block home %}{% endblock %}
+    {% block content %}{% endblock %}
+
+</body>
+</html>

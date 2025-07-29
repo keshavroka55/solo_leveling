@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Your 4 Tasks</h2>
+    <a href="{% url 'task_create' %}" class="btn btn-success mb-3">+ Create New Task</a>
+    <div class="row">
+        {% for task in tasks %}
+        <div class="col-md-6 mb-3">
+            <div class="card p-3">
+                <h5>{{ task.category.name }}</h5>
+                <p>{{ task.name }}</p>
+                <a href="{% url 'task_edit' task.pk %}" class="btn btn-primary btn-sm">Edit</a>
+                <a href="{% url 'task_delete' task.pk %}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+        </div>
+        {% empty %}
+        <p>No tasks found. Create one now!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

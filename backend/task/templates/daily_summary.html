@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Today's Summary - {{ today }}</h2>
+<ul>
+    {% for entry in progress_entries %}
+        <li>
+            {{ entry.task.title }} - {{ entry.get_progress_display }} 
+            {% if entry.consistency_bonus %}
+                (Bonus: +1)
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+<h3>Total Points Today: {{ total_points }}</h3>
+<h3>Lifetime Points: {{ lifetime_points }}</h3>
+
+
+{% endblock %}

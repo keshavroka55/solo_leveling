@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block nav %}{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/pending.css' %}">
+<div class="pending-container">
+    <h1>We're Woking on it!</h1>
+    <p>Stay tuned! Exciting updates are coming soon...</p>
+    <div class="flame-icon">🔥</div>
+</div>
+{% endblock %}

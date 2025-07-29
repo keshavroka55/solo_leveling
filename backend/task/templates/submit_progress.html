@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Submit Today's Progress</h2>
+<form method="POST">
+    {% csrf_token %}
+    {% for task in tasks %}
+        <div>
+            <label>{{ task.title }}</label>
+            <select name="progress_{{ task.id }}">
+                <option value="0">0% - Pending</option>
+                <option value="0.5">25% - Started</option>
+                <option value="1">50% - Halfway</option>
+                <option value="2">100% - Completed</option>
+            </select>
+        </div>
+    {% endfor %}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

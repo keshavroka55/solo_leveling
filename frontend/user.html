@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Manager</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <h1>User Management System</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Messages -->
+    <div id="message" class="message hidden"></div>
+
+    <!-- Create User -->
+    <section class="card">
+      <h2>Add New User</h2>
+      <div class="input-group">
+        <input type="text" id="name" placeholder="Name">
+        <input type="number" id="age" placeholder="Age">
+        <input type="text" id="address" placeholder="Address">
+      </div>
+      <button onclick="createUser()" class="btn btn-primary">Add User</button>
+    </section>
+
+    <!-- List Users -->
+    <section class="card">
+      <h2>All Users</h2>
+      <div id="userList" class="user-list"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 User Management System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/user.js" defer></script>
+</body>
+</html>

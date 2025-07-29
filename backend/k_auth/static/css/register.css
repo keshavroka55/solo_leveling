@@ -1,0 +1,126 @@
+body {
+    background: linear-gradient(135deg, #4b0082, #8a2be2);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.register-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    width: 350px;
+    text-align: center;
+    border: 2px solid #ff4500;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+}
+
+.register-container h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff4500;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    position: relative;
+    text-align: left;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+}
+
+.form-group .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff4500;
+}
+
+.register-btn {
+    background: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.register-btn:hover {
+    background: #ff4500;
+    color: #fff;
+}
+
+.login-link {
+    color: #fff;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.login-link a {
+    color: #ff4500;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.flame-icon {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: #ff4500;
+    animation: flicker 1s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes flicker {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+.register-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: url('{% static "images/character-bg.png" %}') no-repeat center;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+    border-radius: 15px;
+}
